@@ -4,8 +4,15 @@ import router from '@/router'
 import '@/assets/css/tailwind.css'
 import '@/assets/css/index.sass'
 import { createI18n } from 'vue-i18n'
-import translations from '@/i18n'
+import baseTranslations from '@/i18n/translations'
+import bookTranslations from '@/i18n/books'
+import { mergeObjectsRecursive } from '@/utils/function'
 import { GAME_USER_LANGUAGE } from '@/utils/constants.ts'
+
+const translations = mergeObjectsRecursive(
+  mergeObjectsRecursive({}, bookTranslations),
+  baseTranslations
+)
 
 const userLanguage = ref(sessionStorage.getItem(GAME_USER_LANGUAGE) || navigator.language?.split('-')[0])
 

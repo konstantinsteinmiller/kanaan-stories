@@ -1,5 +1,5 @@
 <script setup lang="ts">
-type IconName = 'home' | 'browse' | 'library' | 'profile'
+type IconName = 'home' | 'browse' | 'library' | 'profile' | 'awards'
 
 interface NavItem {
   id: string | number
@@ -119,6 +119,30 @@ function selectItem(item: NavItem) {
               rect(x="9" y="4" width="4" height="16" rx="1")
               path(d="m15.5 6.5 2.4-.8a1 1 0 0 1 1.27.63l4.1 12.3")
               path(d="m23.27 18.6-2.4.8a1 1 0 0 1-1.27-.63L15.5 6.5")
+
+          template(v-else-if="item.icon === 'awards'")
+            svg(
+              v-if="modelValue === item.id"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-full h-full"
+            )
+              path(d="M7 3h10v2h3v3a4 4 0 0 1-4 4 5 5 0 0 1-3 2v3h3v2H8v-2h3v-3a5 5 0 0 1-3-2 4 4 0 0 1-4-4V5h3V3Zm0 4H5v1a2 2 0 0 0 2 2V7Zm10 0v3a2 2 0 0 0 2-2V7h-2Z")
+            svg(
+              v-else
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="w-full h-full"
+            )
+              path(d="M8 21h8")
+              path(d="M12 17v4")
+              path(d="M7 4h10v5a5 5 0 0 1-10 0V4Z")
+              path(d="M17 5h3v3a3 3 0 0 1-3 3")
+              path(d="M7 5H4v3a3 3 0 0 0 3 3")
 
           template(v-else-if="item.icon === 'profile'")
             svg(

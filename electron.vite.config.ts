@@ -86,8 +86,9 @@ export default defineConfig(({ mode }) => {
         vue(),
         // vueDevTools(),
         VueI18nPlugin({
-          include: resolve(__dirname, './src/locales/**'),
-          defaultSFCLang: 'yaml'
+          include: [resolve(__dirname, './src/locales/**'), resolve(__dirname, './src/i18n/**')],
+          defaultSFCLang: 'yaml',
+          runtimeOnly: false
         }),
         ...plugins
       ],

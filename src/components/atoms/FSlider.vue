@@ -89,7 +89,7 @@ const updateValue = (event: Event) => {
 .f-slider-container
   -webkit-tap-highlight-color: transparent
 
-/* Ensure the native range covers the whole area for better hitboxes */
+/* Ensure the native range fruit-agents the whole area for better hitboxes */
 input[type="range"]
   -webkit-appearance: none
   background: transparent

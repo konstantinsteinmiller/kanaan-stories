@@ -2,12 +2,22 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import ListView from '@/views/ListView.vue'
 import DesignSystemView from '@/views/DesignSystemView.vue'
 import DesignSystemSView from '@/views/DesignSystemSView.vue'
+import AppMainView from '@/views/app/AppMainView.vue'
+import AppBookSeriesView from '@/views/app/AppBookSeriesView.vue'
+import AppBookDetailView from '@/views/app/AppBookDetailView.vue'
+import AppAwardsView from '@/views/app/AppAwardsView.vue'
+import AppProfileView from '@/views/app/AppProfileView.vue'
 import useUser, { isWeb } from '@/use/useUser'
 
 const routes = [
-  { path: '/', name: 'main-menu', component: ListView },
+  { path: '/', name: 'main-menu', component: ListView, redirect: '/app' },
   { path: '/design-system', name: 'design-system', component: DesignSystemView },
-  { path: '/design-system-s', name: 'design-system-s', component: DesignSystemSView }
+  { path: '/design-system-s', name: 'design-system-s', component: DesignSystemSView },
+  { path: '/app', name: 'app-main', component: AppMainView },
+  { path: '/app/series/:seriesId', name: 'app-series', component: AppBookSeriesView },
+  { path: '/app/book/:bookId', name: 'app-book', component: AppBookDetailView },
+  { path: '/app/awards', name: 'app-awards', component: AppAwardsView },
+  { path: '/app/profile', name: 'app-profile', component: AppProfileView }
 ]
 
 const router = createRouter({

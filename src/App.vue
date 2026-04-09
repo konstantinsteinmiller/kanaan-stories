@@ -110,7 +110,7 @@ function isCrazyGamesUrl() {
 
 <style lang="sass">
 *
-  font-family: 'Nunito', cursive
+  font-family: 'Nunito', sans-serif
   user-select: none
   // Standard
   -webkit-user-select: none

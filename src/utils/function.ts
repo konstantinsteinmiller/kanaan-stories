@@ -5,6 +5,7 @@ baseURL = baseURL.slice(0, baseURL.length - 1)
 // console.log('baseURL: ', baseURL, isProduction)
 export const prependBaseUrl = (url: string): string => (isProduction ? `${baseURL}/${url}` : url)
 export const repeat = (n: number, callback: (_: any, i: number) => string): string[] => [...new Array(n)].map(callback)
+export const repeatPages = (n: number, callback: (_: any, i: number) => any): any[] => [...new Array(n)].map(callback)
 
 export const mergeObjectsRecursive = (obj1: any, obj2: any) => {
   ;[...Object.keys(obj2)].forEach(key => {

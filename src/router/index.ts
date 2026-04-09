@@ -1,11 +1,13 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import ListView from '@/views/ListView.vue'
 import DesignSystemView from '@/views/DesignSystemView.vue'
+import DesignSystemSView from '@/views/DesignSystemSView.vue'
 import useUser, { isWeb } from '@/use/useUser'
 
 const routes = [
   { path: '/', name: 'main-menu', component: ListView },
-  { path: '/design-system', name: 'design-system', component: DesignSystemView }
+  { path: '/design-system', name: 'design-system', component: DesignSystemView },
+  { path: '/design-system-s', name: 'design-system-s', component: DesignSystemSView }
 ]
 
 const router = createRouter({
